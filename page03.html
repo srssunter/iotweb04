@@ -1,0 +1,851 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: rgb(2, 12, 102);
+        margin: 0px;
+      }
+      .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(2, 1, 49, 0.746);
+        padding: 20px 100px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        font-family: "IBM Plex Mono";
+        font-size: 30px;
+      }
+      .box-r a {
+        font-family: "IBM Plex Mono";
+        font-size: 20px;
+      }
+      .box-r {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+      .h-message {
+        display: flex;
+        flex-direction: column;
+      }
+      #hi {
+        font-family: "Raleway";
+        font-size: 150px;
+        color: white;
+        font-weight: bold;
+      }
+      #name {
+        font-family: "Raleway";
+        font-size: 150px;
+        color: white;
+        font-weight: bold;
+      }
+      #description {
+        font-family: "Raleway";
+        font-size: 30px;
+        color: white;
+      }
+      .h-box {
+        display: flex;
+        align-items: center;
+        margin: 50px 250px 100px 50px; /* บ ล ซ ข  */
+        gap: 100px;
+      }
+      .image {
+        width: 900px;
+        height: 900px;
+        overflow: hidden;
+      }
+      .image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10%;
+        object-fit: cover;
+      }
+      .contact-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      /* ปุ่ม CONTACT ME */
+      .contact-btn {
+        width: 175px;
+        height: 50px;
+        background-color: #7595e8;
+        border-radius: 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        color: #111;
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      /* จุดด้านขวาของ CONTACT ME */
+      .contact-btn i {
+        font-size: 10px;
+      }
+
+      /* ปุ่ม Social */
+      .social-btn {
+        width: 50px;
+        height: 50px;
+        background-color: #20232b;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #7595e8;
+        text-decoration: none;
+        font-size: 22px;
+      }
+
+      /* เอฟเฟกต์เวลาเอาเมาส์ไปชี้ */
+      .contact-btn:hover {
+        background-color: #8ba8f5;
+      }
+
+      .social-btn:hover {
+        background-color: #30333c;
+      }
+      .contact-box {
+        margin-top: 20px;
+      }
+      hr {
+        border: 1px solid #7595e8;
+        margin: 50px 50px 100px 50px;
+      }
+      .about-me {
+        display: flex;
+        margin: 50px 50px 100px 50px;
+        gap: 150px;
+      }
+      .about-me {
+        display: flex;
+        margin: 50px 50px 100px 50px;
+        gap: 150px;
+      }
+
+      /* ฝั่งซ้าย */
+      .about-title {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ฝั่งขวา */
+      .about-content {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      #ab-me {
+        font-family: "Raleway";
+        font-size: 100px;
+        color: white;
+        font-weight: bold;
+      }
+
+      #m1 {
+        font-family: "Raleway";
+        font-size: 35px;
+        color: white;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+
+      #m2 {
+        font-family: "Raleway";
+        font-size: 20px;
+        color: white;
+        line-height: 1.5;
+      }
+      .contact-box2 {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 250px;
+      }
+      /* ปุ่ม CONTACT ME */
+      .contact-btn2 {
+        width: 175px;
+        height: 50px;
+        background-color: #7595e8;
+        border-radius: 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        color: #111;
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      /* จุดด้านขวาของ CONTACT ME */
+      .contact-btn2 i {
+        font-size: 10px;
+      }
+
+      /* ปุ่ม Social */
+      .social-btn2 {
+        width: 50px;
+        height: 50px;
+        background-color: #20232b;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #7595e8;
+        text-decoration: none;
+        font-size: 22px;
+      }
+
+      /* เอฟเฟกต์เวลาเอาเมาส์ไปชี้ */
+      .contact-btn2 :hover {
+        background-color: #8ba8f5;
+      }
+
+      .social-btn2 :hover {
+        background-color: #30333c;
+      }
+      .contact-box2 {
+        margin-top: 20px;
+      }
+      .big-im {
+        width: 1928px;
+        height: 1080px;
+        overflow: hidden;
+        margin: 50px 50px 100px 50px;
+      }
+        .big-im img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10%;
+            object-fit: cover;
+        }
+
+            box-sizing border-box
+          
+
+        body {
+            margin: 0;
+            background-color: rgb(2, 12, 102);
+            color: white;
+            font-family: "Raleway", sans-serif;
+        }
+
+
+        /* =========================================
+           CAPABILITIES
+        ========================================= */
+
+        .capabilities {
+            display: flex;
+            padding: 50px 35px 90px 35px;
+            border-bottom: 1px solid #3d4b78;
+        }
+
+        .capabilities-title {
+            width: 45%;
+        }
+
+        .capabilities-title h2 {
+            margin: 0;
+            font-size: 60px;
+            font-weight: 800;
+            font-family: "IBM Plex Mono", monospace;
+        }
+
+        .capabilities-content {
+            width: 55%;
+        }
+
+        .capabilities-description {
+            margin: 0 0 30px 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #d2d6e5;
+            max-width: 600px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            max-width: 600px;
+        }
+
+        .skill {
+            min-width: 110px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 25px;
+
+            border: 1px solid #4d5d7c;
+            border-radius: 30px;
+
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           EXPERIENCE
+        ========================================= */
+
+        .experience {
+            display: flex;
+            padding: 70px 35px 80px 35px;
+            border-bottom: 1px solid #3d4b78;
+        }
+
+        .experience-title {
+            width: 45%;
+        }
+
+        .experience-title h2 {
+            margin: 0;
+            font-size: 60px;
+            font-weight: 800;
+            font-family: "IBM Plex Mono", monospace;
+        }
+
+        .experience-content {
+            width: 55%;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .job-date {
+            font-size: 15px;
+            color: #bfc5d8;
+        }
+
+        .job-description {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #d0d4e0;
+            max-width: 600px;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact {
+            display: flex;
+            padding: 45px 55px 35px 55px;
+        }
+
+        /* ฝั่งซ้าย */
+
+        .contact-left {
+            width: 45%;
+        }
+
+        .contact-left h2 {
+            margin: 0 0 20px 0;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 60px;
+            font-weight: 800;
+        }
+
+        .contact-left p {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #d0d4e0;
+        }
+
+        .contact-left a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-left a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Social icons */
+
+        .social {
+            display: flex;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .social a {
+            font-size: 25px;
+            color: #7595e8;
+            transition: 0.2s;
+        }
+
+        .social a:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* ฝั่งขวา */
+
+        .contact-right {
+            width: 55%;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #d0d4e0;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            border: none;
+            outline: none;
+
+            background-color: rgb(5, 1, 55);
+            color: white;
+
+            padding: 15px;
+
+            border-radius: 4px;
+
+            font-family: "Raleway", sans-serif;
+            font-size: 15px;
+        }
+
+        .form-group input {
+            height: 46px;
+        }
+
+        .form-group textarea {
+            height: 140px;
+            resize: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 1px solid #7595e8;
+        }
+
+
+        /* Submit */
+
+        .submit-btn {
+            width: 125px;
+            height: 50px;
+
+            margin-top: 10px;
+
+            border: none;
+            border-radius: 30px;
+
+            background-color: #7595e8;
+            color: #111;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #8ba8f5;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            border-top: 1px solid #3d4b78;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #c9cedd;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .capabilities,
+            .experience,
+            .contact {
+                flex-direction: column;
+            }
+
+            .capabilities-title,
+            .capabilities-content,
+            .experience-title,
+            .experience-content,
+            .contact-left,
+            .contact-right {
+                width: 100%;
+                color: white;
+            }
+
+            .capabilities-title,
+            .experience-title {
+                margin-bottom: 40px;
+            }
+
+            .capabilities-title h2,
+            .experience-title h2,
+            .contact-left h2 {
+                font-size: 45px;
+                color: white;
+            }
+
+            .contact {
+                padding: 50px 30px;
+            }
+        }
+        h2{
+            color: white;
+        }
+        .skills{
+            color: white;
+        }
+        .job-title{
+            color: white;
+        }
+        .job-date{
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-bar">
+        <!-- ส่วนที่อยู่ในบาร์ -->
+        <div class="box-l">
+          <a href="">Sirisak Saechai</a>
+        </div>
+        <!-- ฝั่งขวา  -->
+        <div class="box-r">
+          <a href="#">Work</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <!-- ------------------------------------------------------- -->
+      <!-- ส่วนของตรงกลาง -->
+      <div class="h-box">
+        <!-- ส่วนของข้อความ -->
+        <div class="h-message">
+          <span id="hi">Hi, I'm </span>
+          <span id="name">Sirisak S.</span>
+          <span id="description"
+            >นักพัฒนาเว็บไซต์ฝั่งฟรอนท์เอนด์จากประเทศไทย
+            ที่มีความหลงใหลในการสร้าง
+            เว็บไซต์ที่เข้าถึงได้และเป็นมิตรต่อผู้ใช้</span
+          >
+          <div class="contact-box">
+            <a href="#" class="contact-btn">
+              <span>CONTACT ME</span>
+              <i class="bi bi-circle-fill"></i>
+            </a>
+
+            <a href="#" class="social-btn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a href="#" class="social-btn">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+        <!-- ส่วนของรูป -->
+        <div class="image">
+          <img src="./images/sirisak.png" alt="person" />
+        </div>
+      </div>
+      <hr />
+      <!-- About me -->
+      <div class="about-me">
+        <!-- ฝั่งซ้าย -->
+        <div class="about-title">
+          <span id="ab-me">About Me</span>
+        </div>
+
+        <!-- ฝั่งขวา -->
+        <div class="about-content">
+          <span id="m1">
+            ผมเป็นนักพัฒนาเว็บไซต์ฝั่งฟรอนท์เอนด์ที่ทำงานอยู่ในกรุงเทพฯ
+            กำลังมองหาโอกาสที่น่าตื่นเต้นในการทำงาน
+            มีพื้นฐานการศึกษาด้านวิศวกรรมซอฟต์แวร์
+          </span>
+
+          <span id="m2">
+            ชอบให้ความสำคัญกับการเข้าถึง (accessibility) เมื่อพัฒนาเว็บไซต์
+            มีความกระตือรือร้นและอยากรู้อยากเห็นเกี่ยวกับการแก้ปัญหาต่างๆ
+            ปัจจุบันกำลังศึกษาเรียนรู้เกี่ยวกับ React.js และการออกแบบเว็บไซต์
+            เล็กน้อยเมื่อไม่ได้เขียนโปรแกรม ผมชอบเล่นเกมคอมพิวเตอร์ ดูยูทูป
+            ศึกษาการเขียนโปรแกรม กำลังเรียนรู้เพิ่มเติมเพื่อพัฒนาทักษะอยู่เสมอ
+          </span>
+          <div class="contact-box2">
+        <a href="#" class="contact-btn2">
+          <span>DOWLOAD RESUME</span>
+          <i class="bi bi-circle-fill"></i>
+        </a>
+
+        <a href="#" class="social-btn2">
+          <i class="bi bi-linkedin"></i>
+        </a>
+
+        <a href="#" class="social-btn2">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- รูปใหญ่ -->
+     <div class="big-im">
+        <img src="./images/sirisak.png" alt="person" />
+     </div>
+    <hr>
+
+    <section class="capabilities">
+      <!-- ซ้าย -->
+      <div class="capabilities-title">
+        <h2>MY CAPABILITIES</h2>
+      </div>
+
+      <!-- ขวา -->
+      <div class="capabilities-content">
+        <p class="capabilities-description">
+          ผมมองหาโอกาสในการเพิ่มทักษะใหม่ๆ อยู่เสมอ ทั้งการพัฒนาฟรอนท์เอนด์
+          แบ็กเอนด์ การออกแบบ UX/UI ฐานข้อมูล
+        </p>
+
+        <div class="skills">
+          <div class="skill">HTML</div>
+
+          <div class="skill">CSS</div>
+
+          <div class="skill">JAVASCRIPT</div>
+
+          <div class="skill">FLUTTER</div>
+
+          <div class="skill">DART</div>
+
+          <div class="skill">IoT</div>
+
+          <div class="skill">REACT</div>
+
+          <div class="skill">DATABASE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         MY EXPERIENCE
+    ========================================= -->
+
+    <section class="experience">
+      <!-- ซ้าย -->
+      <div class="experience-title">
+        <h2>MY EXPERIENCE</h2>
+      </div>
+
+      <!-- ขวา -->
+      <div class="experience-content">
+        <!-- งานที่ 1 -->
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <span class="job-title"> Freelance Developer </span>
+
+            <span class="job-date"> Nov 2023 – Present </span>
+          </div>
+
+          <p class="job-description">
+            พัฒนาและปรับปรุงส่วนติดต่อผู้ใช้สำหรับเว็บแอปพลิเคชัน โดยใช้
+            React.js ทำงานร่วมกับทีมออกแบบ UX/UI
+            เพื่อสร้างประสบการณ์ผู้ใช้ที่น่าประทับใจ
+            ปรับปรุงความเร็วในการโหลดเว็บไซต์ด้วยเทคนิค การเพิ่มประสิทธิภาพต่างๆ
+            ร่วมพัฒนาและดูแล ไปรษณีย์คอมโพเนนต์ภายในองค์กร
+          </p>
+        </div>
+
+        <!-- งานที่ 2 -->
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <span class="job-title"> Front-End Intern </span>
+
+            <span class="job-date"> Sep 2023 – Nov 2023 </span>
+          </div>
+
+          <p class="job-description">
+            พัฒนาเว็บไซต์ลูกค้าโดยใช้ HTML, CSS และ JavaScript
+            ช่วยปรับปรุงการเข้าถึง (Accessibility)
+            ของเว็บไซต์ให้สอดคล้องกับมาตรฐาน WCAG
+            ทำงานร่วมกับทีมแบ็คเอนด์เพื่อเชื่อมต่อ API
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         LET'S CONNECT
+    ========================================= -->
+
+    <section class="contact">
+      <!-- ฝั่งซ้าย -->
+
+      <div class="contact-left">
+        <h2>LET’S CONNECT</h2>
+
+        <p>
+          Say hello at
+          <a href=""> 6819M10022@sau.ac.th </a>
+        </p>
+
+        <p>For more info, here’s my resume</p>
+
+        <!-- Social -->
+
+        <div class="social">
+          <a href="#" title="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+
+          <a href="#" title="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+
+          <a href="#" title="X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+
+          <a href="#" title="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- ฝั่งขวา -->
+
+      <div class="contact-right">
+        <form>
+          <!-- Name -->
+
+          <div class="form-group">
+            <label for="name"> Name </label>
+
+            <input type="text" id="name" name="name" />
+          </div>
+
+          <!-- Email -->
+
+          <div class="form-group">
+            <label for="email"> Email </label>
+
+            <input type="email" id="email" name="email" />
+          </div>
+
+          <!-- Subject -->
+
+          <div class="form-group">
+            <label for="subject"> Subject </label>
+
+            <input type="text" id="subject" name="subject" />
+          </div>
+
+          <!-- Message -->
+
+          <div class="form-group">
+            <label for="message"> Message </label>
+
+            <textarea id="message" name="message"></textarea>
+          </div>
+
+          <!-- Submit -->
+
+          <button type="submit" class="submit-btn">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="footer">© 2025 Created by SAU-Dev-Team</footer>
+  </body>
+</html>
